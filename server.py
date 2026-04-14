@@ -1,7 +1,11 @@
 print("SERVER STARTING...")
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 
-app = Flask(_name_)
+app = Flask(_name_, static_folder=".")
+
+@app.route("/")
+def home():
+    return send_from_directory(".", "index.html")
 
 @app.route("/scan_url", methods=["POST"])
 def scan_url():
