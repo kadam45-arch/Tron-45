@@ -14,9 +14,9 @@ Cyber Grid Sentinel is a TRON-themed security protocol that runs deep analysis o
 
 | Module | Function | Stops This Scam |
 | --- | --- | --- |
-| **ID / VPA VERIFY** | Decodes and validates UPI ID recipient | Fake merchant VPA like `random123@paytm` |
-| **ENTITY MATCH** | Cross-checks displayed name vs VPA owner | QR says “MSEB” but VPA belongs to scammer |
-| **PAYLOAD RISK** | Scans for pre-filled amounts & malicious params | ₹5000 auto-filled “refund” QRs |
+| **ID / VPA VERIFY** | Decodes and validates UPI ID recipient | Fake merchant VPA like `fake@upi` |
+| **ENTITY MATCH** | Cross-checks displayed name vs VPA owner | QR says “Amazon” but VPA belongs to scammer |
+| **PAYLOAD RISK** | Scans for pre-filled amounts & malicious params | ₹15000 auto-filled “refund” QRs |
 | **LINK INTEGRITY** | Flags HTTP, unknown, or suspicious URLs | Phishing links masked as UPI |
 
 **Flag Legend:** `SECURE` `CAUTION` `THREAT`
@@ -33,15 +33,29 @@ Cyber Grid Sentinel is a TRON-themed security protocol that runs deep analysis o
 - **Activity Log**: Real-time system feed of all analysis
 - **Risk Index**: Final threat score before payment
 
+## Test Cases
+
+**SAFE:**
+
+**SUSPICIOUS:
+**SUSPICIOUS:**upi://pay?pa=unknown@upi&pn=Unknown&am=6000
+bank-login.com
+verify-account.com
+secure-update.netjavascript
+**DANGEROUS:**secure@fake-bank.com
+login-secure-update@fraud.com
+paytm-secure-login@hack.ru
+upi://pay?pa=fake@upi&pn=Amazon&am=15000javascript
+**EXAMPLE CASE:**secure-login-verify-update-bank-account-user-confirmation.comjavascript
 ## How to Run
-1. Clone this repo
-2. Open `index.html` in your browser
-3. Paste UPI URL or upload QR image → Click `EXECUTE ANALYSIS`
-4. Review the 4 check results + RISK INDEX
+1. Open terminal in this folder
+2. Run: `pip install flask`
+3. Run: `python app.py`
+4. Open: `http://127.0.0.1:5000`
 
 ## Tech Stack
-HTML5, CSS3, Vanilla JS  
-Neural Pay Scanner runs 100% client-side for privacy. No data leaves your Grid.
+HTML5, CSS3, Vanilla JS, Flask, QR-Scanner Library  
+Neural Pay Scanner runs locally for privacy. No data leaves your Grid.
 
 ## Built For
 Jarvis 2.0 – Fighting UPI fraud with gamified security protocols.
