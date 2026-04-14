@@ -20,7 +20,7 @@ CyberGrid Sentinel is a TRON-inspired UPI QR scanner that acts as your Grid Scan
 Instead of just blocking scams, we *teach* users why a QR is risky.
 
 ## Demo
-[Add screenshot/gif of your TRON UI here]
+https://github.com/kadam45-arch/Tron-CyberGridSentinel-./blob/main/Tron.png?raw=true
 
 **Live Link:** `[Your GitHub Pages link here]`
 
